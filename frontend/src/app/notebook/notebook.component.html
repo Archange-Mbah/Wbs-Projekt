@@ -1,0 +1,8 @@
+<div >
+    <p> I am note book number {{ notebook.getId()}}</p>
+    @for(note  of notes; track note.getTitle) {
+        <!-- track pour traquer chaque snaps specifique-->
+        <app-note [note]="note"> </app-note>
+    }
+</div>
+

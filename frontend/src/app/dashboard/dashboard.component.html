@@ -1,0 +1,11 @@
+<div >
+   
+    @for(notebook of notebooks; track notebook.getTitle) {
+        <!-- track pour traquer chaque snaps specifique-->
+        <app-notebook [notebook]="notebook"> 
+            <p> I am book {{notebook.getId()}}</p>
+        </app-notebook>
+    }
+    <p> The length number of books are {{notebooks.length}}</p>
+      
+ </div>
