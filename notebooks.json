@@ -1,0 +1,62 @@
+[
+    {
+      "id": "1",
+      "title": "My First Notebook",
+      "createdAt": "2025-01-01T00:00:00Z",
+      "updatedAt": "2025-01-02T00:00:00Z",
+      "notes": [
+        {
+          "id": "1",
+          "title": "First Note",
+          "content": "This is the content of the first note.",
+          "createdAt": "2025-01-01T01:00:00Z",
+          "updatedAt": "2025-01-01T01:30:00Z"
+        }
+      ],
+      "owner": {
+        "id": "1",
+        "name": "John Doe",
+        "email": "john.doe@example.com"
+      }
+    },
+    {
+      "id": "2",
+      "title": "Work Notes",
+      "createdAt": "2025-01-10T10:00:00Z",
+      "updatedAt": "2025-01-11T11:00:00Z",
+      "notes": [
+        {
+          "id": "2",
+          "title": "Project Plan",
+          "content": "Details of the work project.",
+          "createdAt": "2025-01-10T10:30:00Z",
+          "updatedAt": "2025-01-10T11:00:00Z"
+        }
+      ],
+      "owner": {
+        "id": "2",
+        "name": "Jane Smith",
+        "email": "jane.smith@example.com"
+      }
+    },
+    {
+      "id": "3",
+      "title": "Personal Ideas",
+      "createdAt": "2025-01-15T15:00:00Z",
+      "updatedAt": "2025-01-16T16:00:00Z",
+      "notes": [
+        {
+          "id": "3",
+          "title": "Idea for a new app",
+          "content": "An idea for a new mobile application.",
+          "createdAt": "2025-01-15T15:30:00Z",
+          "updatedAt": "2025-01-15T16:00:00Z"
+        }
+      ],
+      "owner": {
+        "id": "3",
+        "name": "Alice Brown",
+        "email": "alice.brown@example.com"
+      }
+    }
+  ]
