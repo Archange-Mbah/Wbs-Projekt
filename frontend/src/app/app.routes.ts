@@ -3,7 +3,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NotebookComponent } from './components/notebook/notebook.component';
 import { NotebookDetailsComponent } from './components/notebook-details/notebook-details.component';
 import { NoteComponent } from './components/note/note.component';
-import { AuthComponent } from './components/auth/auth.component';
+import { AuthComponent } from './auth/auth.component';
 
 
 export const routes: Routes = [
