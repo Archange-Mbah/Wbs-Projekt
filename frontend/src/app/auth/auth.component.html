@@ -1,25 +1,71 @@
-<div class="center-form">
-    <img src="logo.png" alt="Logo" class="logo">
-    <h2>tragen Sie ihre Daten ein</h2>
-    <form nz-form [formGroup]="loginForm" (ngSubmit)="submitForm()" class="custom-form">
-        <nz-form-item>
-            <nz-form-control nzErrorTip="Please input your email!">
-                <nz-input-group nzPrefixIcon="user">
-                    <input type="email" nz-input formControlName="email" placeholder="Enter Email" />
-                </nz-input-group>
-            </nz-form-control>
-        </nz-form-item>
-
-        <nz-form-item>
-            <nz-form-control nzErrorTip="Please input your Password!">
-                <nz-input-group nzPrefixIcon="lock">
-                    <input type="password" nz-input formControlName="password" placeholder=" Enter password " />
-                </nz-input-group>
-            </nz-form-control>
-        </nz-form-item>
-
-        <button nz-button nzType="primary" type="submit" nzBlock [disabled]="loginForm.invalid" class="w-100">
-            Einlogen
-        </button>
+<div class="auth-container">
+    <!-- Form Start -->
+    <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+      
+      <!-- Username Field -->
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input
+          id="username"
+          formControlName="username"
+          type="text"
+          placeholder="Enter your username"
+          [ngClass]="{ 'is-invalid': loginForm.controls['username'].invalid && loginForm.controls['username'].touched }"
+        />
+        <div *ngIf="loginForm.controls['username'].invalid && loginForm.controls['username'].touched" class="error-message">
+          Username is required
+        </div>
+      </div>
+      
+      <!-- Password Field -->
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          id="password"
+          formControlName="password"
+          type="password"
+          placeholder="Enter your password"
+          [ngClass]="{ 'is-invalid': loginForm.controls['password'].invalid && loginForm.controls['password'].touched }"
+        />
+        <div *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched" class="error-message">
+          Password is required
+        </div>
+      </div>
+  
+      <!-- Confirm Password (only visible when registration mode) -->
+      <div *ngIf="!isLoginMode" class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input
+          id="confirmPassword"
+          formControlName="confirmPassword"
+          type="password"
+          placeholder="Confirm your password"
+          [ngClass]="{ 'is-invalid': loginForm.controls['confirmPassword'].invalid && loginForm.controls['confirmPassword'].touched }"
+        />
+        <div *ngIf="loginForm.controls['confirmPassword'].invalid && loginForm.controls['confirmPassword'].touched" class="error-message">
+          Confirm Password is required
+        </div>
+        <div *ngIf="errorMsg === 'Passwords do not match'" class="error-message">
+          Passwords do not match
+        </div>
+      </div>
+      
+      <!-- Error Message -->
+      <div *ngIf="errorMsg" class="error-message">
+        {{ errorMsg }}
+      </div>
+  
+      <!-- Submit Button -->
+      <button type="submit" [disabled]="loginForm.invalid">
+        {{ isLoginMode ? 'Login' : 'Register' }}
+      </button>
     </form>
-</div>
+  
+    <!-- Switch Between Login and Registration -->
+    <div class="toggle-mode">
+      <button (click)="toggleLoginMode()">
+        {{ isLoginMode ? 'Switch to Register' : 'Switch to Login' }}
+      </button>
+    </div>
+  </div>
+  

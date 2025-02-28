@@ -5,11 +5,11 @@ import { NoteBook } from '../../models/notebook.model';
 import { NoteComponent } from "../note/note.component";
 
 @Component({
-  selector: 'app-notebook',
-  standalone: true,
-  imports: [NoteComponent],
-  templateUrl: './notebook.component.html',
-  styleUrl: './notebook.component.scss'
+    selector: 'app-notebook',
+    standalone  : true,
+    imports: [NoteComponent],
+    templateUrl: './notebook.component.html',
+    styleUrl: './notebook.component.scss'
 })
 export class NotebookComponent  implements OnInit {
 

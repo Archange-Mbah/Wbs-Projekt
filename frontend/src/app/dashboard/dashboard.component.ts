@@ -4,11 +4,11 @@ import { NotebookService } from '../services/notebooks.service';
 import { NotebookComponent } from '../notebook/notebook.component';
 
 @Component({
-  selector: 'app-dashboard',
-  standalone: true,
-  imports: [NotebookComponent],
-  templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.scss'
+    selector: 'app-dashboard',
+    standalone  : true,
+    imports: [NotebookComponent],
+    templateUrl: './dashboard.component.html',
+    styleUrl: './dashboard.component.scss'
 })
 export class DashboardComponent implements OnInit {
 
