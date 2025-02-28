@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { NotebookComponent } from './notebook/notebook.component';
-import { NotebookDetailsComponent } from './notebook-details/notebook-details.component';
-import { NoteComponent } from './note/note.component';
-import { AuthComponent } from './auth/auth.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { NotebookComponent } from './components/notebook/notebook.component';
+import { NotebookDetailsComponent } from './components/notebook-details/notebook-details.component';
+import { NoteComponent } from './components/note/note.component';
+import { AuthComponent } from './components/auth/auth.component';
 
 
 export const routes: Routes = [

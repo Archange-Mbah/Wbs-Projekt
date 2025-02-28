@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Note } from '../../models/note.model';
-import { NoteService } from '../services/note.service';
-import { NoteBook } from '../../models/notebook.model';
+import { Note } from '../../../models/note.model';
+import { NoteService } from '../../services/note.service';
+import { NoteBook } from '../../../models/notebook.model';
 import { NoteComponent } from "../note/note.component";
 
 @Component({

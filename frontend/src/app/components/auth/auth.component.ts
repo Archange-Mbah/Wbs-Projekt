@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import {AuthService} from '../services/auth.service';
+import {AuthService} from '../../services/auth.service';
 import {NzMessageService} from 'ng-zorro-antd/message';
 import { register } from 'module';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-auth',
@@ -27,7 +28,8 @@ export class AuthComponent implements OnInit {
   constructor(
     private authService:AuthService, 
     private message:NzMessageService, 
-    private fb:FormBuilder) {}
+    private fb:FormBuilder,
+    private router:Router) {}
 
     ngOnInit(): void {
       this.isLoginMode = true;
@@ -61,6 +63,7 @@ login(){
   this.authService.login(username, password).subscribe(
     res => {
       this.message.success('Logged in successfully');
+      this.router.navigateByUrl('/dashboard'); 
     },
     err => {
       this.errorMsg = err.error.message;
@@ -79,6 +82,7 @@ register(){
   this.authService.register(username, password).subscribe(
     res => {
       this.message.success('Registered successfully');
+      this.router.navigateByUrl('/dashboard');
     },
     err => {
       this.errorMsg = err.error.message;
